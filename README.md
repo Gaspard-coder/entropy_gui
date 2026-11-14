@@ -23,3 +23,9 @@ Hosting: Rust desktop app with background MATLAB's files
 - What tool is the best (for me it is between egui and dioxus). You can propose others tools if relevant
 - What are the good development practises to dev this type of project?
 - What are the mandatory sections of the Rust book (https://rust-book.cs.brown.edu/ch06-02-match.html) to achieve this type of project?
+
+
+# Directory organization
+- src/main.rs # Entry point & OS window initialization
+- src/app.rs # Host application
+- example.rs # UI component
