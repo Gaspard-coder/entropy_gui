@@ -1,5 +1,6 @@
 mod app;
 mod example;
+mod page2;
 
 use app::MyApp;
 
