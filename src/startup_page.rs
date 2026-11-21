@@ -48,6 +48,18 @@ impl StartUpPage {
             {
                 next_page = Some(Page::Second);
             }
+
+            ui.add_space(spacing);
+
+            if ui
+                .add_sized(
+                    [btn_width, btn_height],
+                    egui::Button::new("Compute Entropy and Complexity"),
+                )
+                .clicked()
+            {
+                next_page = Some(Page::ComputeHxC);
+            }
         });
         next_page
     }

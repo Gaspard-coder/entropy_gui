@@ -1,3 +1,4 @@
+use crate::compute_hxc::ComputeHxC;
 use crate::example::CodeExample;
 use crate::page2::SecondPage;
 use crate::startup_page::StartUpPage;
@@ -10,6 +11,7 @@ pub enum Page {
     StartUpPage,
     Example,
     Second,
+    ComputeHxC,
 }
 
 // The host application
@@ -19,6 +21,7 @@ pub struct MyApp {
     start_up_page: StartUpPage,
     example_widget: CodeExample,
     second_page: SecondPage,
+    compute_hxc: ComputeHxC,
 }
 
 impl MyApp {
@@ -29,6 +32,7 @@ impl MyApp {
             start_up_page: StartUpPage::default(),
             example_widget: CodeExample::default(),
             second_page: SecondPage::default(),
+            compute_hxc: ComputeHxC::default(),
         }
     }
 }
@@ -49,6 +53,11 @@ impl eframe::App for MyApp {
                     ui.separator();
                     ui.selectable_value(&mut self.current_page, Page::Example, "Test 1");
                     ui.selectable_value(&mut self.current_page, Page::Second, "Test 2");
+                    ui.selectable_value(
+                        &mut self.current_page,
+                        Page::ComputeHxC,
+                        "Compute Entropy and Complexity",
+                    );
                 });
             });
         }
@@ -63,6 +72,7 @@ impl eframe::App for MyApp {
             }
             Page::Example => self.example_widget.ui(ui),
             Page::Second => self.second_page.ui(ui),
+            Page::ComputeHxC => self.compute_hxc.ui(ui),
         });
     }
 }

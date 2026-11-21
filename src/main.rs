@@ -1,4 +1,5 @@
 mod app;
+mod compute_hxc;
 mod example;
 mod page2;
 mod startup_page;
