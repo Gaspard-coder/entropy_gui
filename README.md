@@ -29,3 +29,10 @@ Hosting: Rust desktop app with background MATLAB's files
 - src/main.rs # Entry point & OS window initialization
 - src/app.rs # Host application
 - example.rs # UI component
+
+# Requirements
+- egui
+- MATLAB
+- Linux (for now)
+
+ matlab -nodesktop -nosplash -r "HXC_standard_deviation(4,1,'/home/gaspichou/Documents/git/DBT2-permutation-entropy/Database/diabet/raw_datasets/DBT2'); quit" => only give the result, not the display

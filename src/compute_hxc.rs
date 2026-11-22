@@ -1,4 +1,5 @@
 use eframe::egui;
+use std::process::Command;
 
 pub struct ComputeHxC {
     data_path: String,
@@ -15,6 +16,8 @@ impl Default for ComputeHxC {
         }
     }
 }
+// Only on linux for now
+output = Command::new("matlab").args(["-nodesktop","-nosplash","-r","\"HXC_standard_deviation(4,1,'/home/gaspichou/Documents/git/DBT2-permutation-entropy/Database/diabet/raw_datasets/DBT2'); quit\""]).output();
 
 impl ComputeHxC {
     pub fn ui(&mut self, ui: &mut egui::Ui) {
